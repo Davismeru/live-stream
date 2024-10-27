@@ -1,0 +1,21 @@
+.nav-container {
+  @apply flex justify-between items-center px-4 py-4 bg-gray-900 text-white md:px-8;
+}
+
+.fixed-nav {
+  @apply flex justify-between items-center px-4 py-4 bg-[rgba(0,0,0,0.8)] text-white fixed top-0 w-full md:px-8 md:bg-[rgba(0,0,0,0.6)];
+}
+
+.nav-container h1,
+.fixed-nav h1 {
+  @apply text-lg font-bold;
+}
+
+.nav-container nav,
+.fixed-nav nav {
+  @apply space-x-4 hidden items-center md:flex;
+}
+
+.coffee-btn {
+  @apply bg-orange-400 p-2 rounded-md;
+}

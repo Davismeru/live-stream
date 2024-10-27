@@ -1,0 +1,20 @@
+.hero-container {
+  @apply min-h-[70vh] flex flex-col;
+}
+
+.hero-section {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+    url("/hero.jpg");
+  background-size: cover;
+  background-position: center;
+
+  @apply flex-1 flex items-center justify-center text-center text-white py-10;
+}
+
+.hero-section h2 {
+  @apply text-3xl font-bold mb-4;
+}
+
+.hero-section p {
+  @apply text-xl mb-6;
+}

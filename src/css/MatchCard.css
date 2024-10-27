@@ -1,0 +1,15 @@
+.matchcard-container {
+  @apply bg-[rgba(0,0,0,0.8)] mx-5 text-white rounded-md py-2 mb-5 px-2 text-center shadow-sm;
+}
+
+.matchcard-container .teams {
+  @apply flex justify-between;
+}
+
+.matchcard-container .teams section {
+  @apply w-1/2 flex flex-col items-center;
+}
+
+.matchcard-container .teams section p {
+  @apply font-semibold;
+}

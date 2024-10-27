@@ -1,0 +1,23 @@
+.featured-container {
+  @apply py-16 bg-gray-100 text-gray-800;
+}
+
+.featured-container section {
+  @apply max-w-6xl mx-auto px-8 text-center;
+}
+
+.featured-cards {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.featured-card {
+  @apply p-6 bg-white rounded-lg shadow-lg flex flex-col justify-between;
+}
+
+.featured-card h4 {
+  @apply text-xl font-semibold mb-4;
+}
+
+.featured-card button {
+  @apply bg-gray-800 text-white p-2 rounded-sm mt-3 w-[60%] self-center;
+}

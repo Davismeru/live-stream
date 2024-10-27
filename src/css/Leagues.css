@@ -1,0 +1,23 @@
+.leagues-container {
+  @apply py-16 bg-gray-800 text-white;
+}
+
+.leagues-container section {
+  @apply max-w-6xl mx-auto px-8 text-center;
+}
+
+.league-cards {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.league-card {
+  @apply p-6 bg-gray-900 rounded-lg shadow-lg flex flex-col items-center;
+}
+
+.league-card h4 {
+  @apply text-xl font-semibold mb-4;
+}
+
+.league-logo {
+  @apply w-20 h-16 mb-3 object-contain;
+}

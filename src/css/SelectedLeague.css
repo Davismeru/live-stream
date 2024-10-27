@@ -1,0 +1,3 @@
+.league-title {
+  @apply capitalize font-semibold text-center my-5 text-xl text-gray-600;
+}
