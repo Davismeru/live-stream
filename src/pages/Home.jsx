@@ -7,7 +7,7 @@ import EmailSubscription from "../components/EmailSubscription";
 
 function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Hero />
       <Featured />
       <Leagues />

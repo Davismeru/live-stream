@@ -1,31 +1,36 @@
 import React from "react";
 import "../css/MatchCard.css";
+import { Link } from "react-router-dom";
 
 function MatchCard({ fixture }) {
   const teamsPlaying = fixture.fixture;
   const matchStatus = fixture.status;
-  const matchUrl = fixture.link;
+  const matchChannel = fixture.channel;
   return (
-    <div className="matchcard-container">
-      {/* team names and logos */}
-      <div className="teams">
-        {console.log(matchUrl)}
-        {/* team one */}
-        <section>
-          <p>{teamsPlaying[0].name}</p>
-        </section>
+    <Link to={`/stream/${matchChannel}`}>
+      <div className="matchcard-container">
+        {/* team names and logos */}
+        <div className="teams">
+          {console.log(fixture)}
+          {/* team one */}
+          <section>
+            <p>{teamsPlaying[0].name}</p>
+            <img src={teamsPlaying[0].logo} alt="logo" />
+          </section>
 
-        {/* team two */}
-        <section>
-          <p>{teamsPlaying[1].name}</p>
-        </section>
-      </div>
+          {/* team two */}
+          <section>
+            <p>{teamsPlaying[1].name}</p>
+            <img src={teamsPlaying[1].logo} alt="logo" />
+          </section>
+        </div>
 
-      {/* match status */}
-      <div>
-        <p>{matchStatus}</p>
+        {/* match status */}
+        <div>
+          <p>{matchStatus}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

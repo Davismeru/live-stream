@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Featured.css";
+import AdsterraAd from "./AdsterraAd";
 
 function Featured() {
   return (
@@ -27,6 +28,7 @@ function Featured() {
           </div>
         </div>
       </section>
+      <AdsterraAd />
     </div>
   );
 }

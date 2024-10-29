@@ -1,9 +1,9 @@
 .nav-container {
-  @apply flex justify-between items-center px-4 py-4 bg-gray-900 text-white md:px-8;
+  @apply flex justify-between items-center px-4 py-4 bg-gray-900 text-white z-40 md:px-8;
 }
 
 .fixed-nav {
-  @apply flex justify-between items-center px-4 py-4 bg-[rgba(0,0,0,0.8)] text-white fixed top-0 w-full md:px-8 md:bg-[rgba(0,0,0,0.6)];
+  @apply flex justify-between items-center px-4 py-4 bg-[rgba(0,0,0,0.8)] text-white fixed top-0 w-full z-40 md:px-8 md:bg-[rgba(0,0,0,0.6)];
 }
 
 .nav-container h1,
@@ -17,5 +17,5 @@
 }
 
 .coffee-btn {
-  @apply bg-orange-400 p-2 rounded-md;
+  @apply bg-orange-500 p-2 rounded-sm flex items-center;
 }

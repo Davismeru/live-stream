@@ -7,9 +7,13 @@
 }
 
 .matchcard-container .teams section {
-  @apply w-1/2 flex flex-col items-center;
+  @apply w-1/2 flex flex-col items-center justify-between;
 }
 
 .matchcard-container .teams section p {
-  @apply font-semibold;
+  @apply font-semibold overflow-clip;
+}
+
+.matchcard-container .teams section img {
+  @apply h-20;
 }

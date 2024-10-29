@@ -31,7 +31,7 @@ function Nav() {
           Leagues
         </a>
         <a href="#contact" className="hover:underline coffee-btn">
-          Buy me a coffee
+          <p>Buy me a coffee</p>
         </a>
       </nav>
     </div>

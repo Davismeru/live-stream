@@ -2,6 +2,7 @@ import React from "react";
 import "../css/Leagues.css";
 import { leagues } from "../../public/leagues";
 import { Link } from "react-router-dom";
+import AdsterraAd from "./AdsterraAd";
 
 function Leagues() {
   return (
@@ -25,6 +26,7 @@ function Leagues() {
           ))}
         </div>
       </section>
+      <AdsterraAd />
     </div>
   );
 }
