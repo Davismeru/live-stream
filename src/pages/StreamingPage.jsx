@@ -18,7 +18,7 @@ function StreamingPage() {
       ></iframe>
 
       {/* loading */}
-      <section className="absolute top-1/2 left-1/2 -z-30">
+      <section className="absolute top-1/2 left-1/2 -z-30 -translate-x-1/2">
         <p>loading...</p>
       </section>
 

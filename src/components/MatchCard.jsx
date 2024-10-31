@@ -6,8 +6,15 @@ function MatchCard({ fixture }) {
   const teamsPlaying = fixture.fixture;
   const matchStatus = fixture.status;
   const matchChannel = fixture.channel;
+  const matchTIme = fixture.time;
   return (
-    <Link to={`/stream/${matchChannel}`}>
+    <Link
+      to={
+        matchStatus == "started"
+          ? `/stream/${matchChannel}`
+          : `/fixture/not_started`
+      }
+    >
       <div className="matchcard-container">
         {/* team names and logos */}
         <div className="teams">
@@ -28,6 +35,7 @@ function MatchCard({ fixture }) {
         {/* match status */}
         <div>
           <p>{matchStatus}</p>
+          {matchStatus == "upcoming" && <p>{matchTIme}</p>}
         </div>
       </div>
     </Link>

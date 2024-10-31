@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../css/Nav.css";
+import { Link } from "react-router-dom";
 
 function Nav() {
   const navRef = useRef(null);
@@ -22,18 +23,27 @@ function Nav() {
   }, []);
   return (
     <div ref={navRef} className={fixedNav ? "fixed-nav" : "nav-container"}>
-      <h1>Foota.live</h1>
+      <h1>
+        Ball<span>hub</span>
+      </h1>
       <nav>
-        <a href="#features" className="hover:underline">
-          top matches
-        </a>
         <a href="#pricing" className="hover:underline">
-          Leagues
+          Get updates
         </a>
-        <a href="#contact" className="hover:underline coffee-btn">
-          <p>Buy me a coffee</p>
+        <a href="#features" className="hover:underline">
+          Blog
         </a>
+        <Link to="/buy_me_a_coffe">
+          <button className="coffee-btn">Buy me a coffee</button>
+        </Link>
       </nav>
+
+      {/* nav for small devices */}
+      <div className="small-nav">
+        <Link to="/buy_me_a_coffe">
+          <button className="coffee-btn">Buy me a coffee</button>
+        </Link>
+      </div>
     </div>
   );
 }

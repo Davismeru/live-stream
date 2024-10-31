@@ -27,7 +27,7 @@ function SelectedLeague() {
           return <MatchCard key={i} fixture={fixture} />;
         })}
       </div>
-
+      <AdsterraAd />
       <EmailSubscription />
     </div>
   );

@@ -8,7 +8,12 @@
 
 .nav-container h1,
 .fixed-nav h1 {
-  @apply text-lg font-bold;
+  @apply text-xl font-bold;
+}
+
+.nav-container h1 span,
+.fixed-nav h1 span {
+  @apply font-bold bg-orange-500 rounded-sm px-1 py-1 text-black;
 }
 
 .nav-container nav,
@@ -18,4 +23,8 @@
 
 .coffee-btn {
   @apply bg-orange-500 p-2 rounded-sm flex items-center;
+}
+
+.small-nav {
+  @apply md:hidden;
 }

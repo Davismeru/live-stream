@@ -103,64 +103,58 @@ const epl_teams = [
 ];
 const english_premier_league = [
   {
-    fixture: [epl_teams[13], epl_teams[18]],
+    fixture: [epl_teams[2], epl_teams[12]],
     time: "25th/11/2024",
     channel: "tnt2_1",
-    status: "started",
+    status: "upcoming",
   },
   {
-    fixture: [epl_teams[2], epl_teams[3]],
+    fixture: [epl_teams[9], epl_teams[10]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
     status: "started",
   },
   {
-    fixture: [epl_teams[4], epl_teams[5]],
+    fixture: [epl_teams[11], epl_teams[4]],
+    time: "25th/11/2024",
+    channel: "https://blabla.com",
+    status: "upcoming",
+  },
+  {
+    fixture: [epl_teams[15], epl_teams[18]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
     status: "started",
   },
   {
-    fixture: [epl_teams[6], epl_teams[7]],
+    fixture: [epl_teams[16], epl_teams[7]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
-    fixture: [epl_teams[8], epl_teams[9]],
+    fixture: [epl_teams[19], epl_teams[6]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
-    fixture: [epl_teams[10], epl_teams[11]],
+    fixture: [epl_teams[17], epl_teams[1]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
-    fixture: [epl_teams[12], epl_teams[13]],
+    fixture: [epl_teams[13], epl_teams[5]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
-    fixture: [epl_teams[14], epl_teams[15]],
+    fixture: [epl_teams[8], epl_teams[3]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
-  },
-  {
-    fixture: [epl_teams[16], epl_teams[17]],
-    time: "25th/11/2024",
-    channel: "https://blabla.com",
-    status: "started",
-  },
-  {
-    fixture: [epl_teams[18], epl_teams[19]],
-    time: "25th/11/2024",
-    channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
 ];
 
@@ -192,67 +186,67 @@ const la_liga = [
     fixture: [la_liga_teams[0], la_liga_teams[1]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[2], la_liga_teams[3]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[4], la_liga_teams[5]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[6], la_liga_teams[7]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[8], la_liga_teams[9]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[10], la_liga_teams[11]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[12], la_liga_teams[13]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[14], la_liga_teams[15]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[16], la_liga_teams[17]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[8], la_liga_teams[9]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
   {
     fixture: [la_liga_teams[18], la_liga_teams[9]],
     time: "25th/11/2024",
     channel: "https://blabla.com",
-    status: "started",
+    status: "upcoming",
   },
 ];
 
@@ -504,6 +498,33 @@ const europa_league = [
     time: "7th/12/2024",
     channel: "https://example.com/match-manutd-roma",
     status: "scheduled",
+  },
+];
+
+// featured games all leagues
+export const top_games = [
+  {
+    fixture: [epl_teams[13], epl_teams[5]],
+    time: "25th/11/2024",
+    channel: "tnt",
+    status: "upcoming",
+    league: "english premier league",
+  },
+
+  {
+    fixture: [la_liga_teams[4], la_liga_teams[5]],
+    time: "25th/11/2024",
+    channel: "https://blabla.com",
+    status: "upcoming",
+    league: "la liga",
+  },
+
+  {
+    fixture: [champions_league_teams[1], champions_league_teams[6]],
+    time: "27th/11/2024",
+    channel: "https://example.com/match-arsenal-barcelona",
+    status: "scheduled",
+    league: "uefa champions league",
   },
 ];
 

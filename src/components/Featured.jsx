@@ -1,6 +1,8 @@
 import React from "react";
 import "../css/Featured.css";
 import AdsterraAd from "./AdsterraAd";
+import { top_games } from "../../public/fixtures";
+import { Link } from "react-router-dom";
 
 function Featured() {
   return (
@@ -8,24 +10,19 @@ function Featured() {
       <section>
         <h3 className="text-4xl font-bold mb-8">This week's top matches</h3>
         <div className="featured-cards">
-          {/* card */}
-          <div className="featured-card">
-            <h4>Liverpool vs Manchester United</h4>
-            <p>English Premier League</p>
-            <button>Watch now</button>
-          </div>
+          {top_games.map((game, i) => (
+            // card
 
-          {/* card */}
-          <div className="featured-card">
-            <h4>Chelsea vs Arsenal</h4>
-            <p>English Premier League</p>
-            <button>Watch now</button>
-          </div>
-          <div className="featured-card">
-            <h4>Bayern Munich vs Barcelona</h4>
-            <p>Serie A</p>
-            <button>Watch now</button>
-          </div>
+            <div className="featured-card" key={i}>
+              <h4>
+                {game.fixture[0].name} vs {game.fixture[1].name}
+              </h4>
+              <p>{game.league}</p>
+              <Link to={`/stream/${game.channel}`}>
+                <button>Watch now</button>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
       <AdsterraAd />
