@@ -23,16 +23,16 @@ function Nav() {
   }, []);
   return (
     <div ref={navRef} className={fixedNav ? "fixed-nav" : "nav-container"}>
-      <h1>
-        Ball<span>hub</span>
-      </h1>
+      <Link to="/">
+        <h1>
+          Ball<span>hub</span>
+        </h1>
+      </Link>
       <nav>
         <a href="#pricing" className="hover:underline">
           Get updates
         </a>
-        <a href="#features" className="hover:underline">
-          Blog
-        </a>
+        <Link to="/blog">Blog</Link>
         <Link to="/buy_me_a_coffe">
           <button className="coffee-btn">Buy me a coffee</button>
         </Link>

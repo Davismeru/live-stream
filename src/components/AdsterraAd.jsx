@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 const AdsterraAd = () => {
   return (
     <div>
-      <iframe
+      {/* <iframe
         src="//www.highperformanceformat.com/watchnew?key=29363ac45213fafe23d28d52101c6f50"
         width="728"
         height="90"
@@ -19,7 +19,7 @@ const AdsterraAd = () => {
         frameborder="0"
         scrolling="no"
         className="mx-auto mt-10 lg:hidden"
-      ></iframe>
+      ></iframe> */}
     </div>
   );
 };

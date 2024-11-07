@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { base_api_uri } from "../assets/constants";
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can handle the email submission here
-    console.log("Email submitted:", email);
+    const res = await axios.post(`${base_api_uri}/email`, { email: email });
+    console.log(res.data);
   };
 
   return (
@@ -18,10 +20,7 @@ const EmailSubscription = () => {
         <p className="text-gray-600 mb-6">
           Enter your email to receive updates on live matches and more.
         </p>
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col items-center space-y-4"
-        >
+        <form className="flex flex-col items-center space-y-4">
           <input
             type="email"
             value={email}
@@ -31,7 +30,7 @@ const EmailSubscription = () => {
             required
           />
           <button
-            type="submit"
+            onClick={(e) => handleSubmit(e)}
             className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Subscribe

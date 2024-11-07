@@ -6,6 +6,8 @@ import SelectedLeague from "./pages/SelectedLeague";
 import StreamingPage from "./pages/StreamingPage";
 import NotStarted from "./pages/NotStarted";
 import BuyMeACoffee from "./pages/BuyMeACoffee";
+import BlogPage from "./pages/Blog";
+import BlogsHome from "./pages/BlogsHome";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/stream/:channel" Component={StreamingPage} />
           <Route path="/fixture/not_started" Component={NotStarted} />
           <Route path="/buy_me_a_coffe" Component={BuyMeACoffee} />
+          <Route path="/blog/:title" Component={BlogPage} />
+          <Route path="/blog" Component={BlogsHome} />
         </Routes>
       </Router>
     </div>

@@ -345,7 +345,7 @@ const champions_league_teams = [
   { name: "Newcastle United", logo: "/logos/newcastle.png", index: 4 },
   { name: "Real Madrid", logo: "/logos/real.png", index: 5 },
   { name: "Barcelona", logo: "/logos/barcelona.png", index: 6 },
-  { name: "Atlético Madrid", logo: "/logos/atletico.png", index: 7 },
+  { name: "Atlético Madrid", logo: "/logos/attletico.png", index: 7 },
   { name: "Sevilla", logo: "/logos/sevilla.png", index: 8 },
   { name: "Bayern Munich", logo: "/logos/bayern.png", index: 9 },
   { name: "Borussia Dortmund", logo: "/logos/dortmund.png", index: 10 },
@@ -501,6 +501,116 @@ const europa_league = [
   },
 ];
 
+// bundesliga
+const bundesliga_teams = [
+  { name: "Bayern Munich", logo: "/logos/bayern.png", index: 0 },
+  { name: "Borussia Dortmund", logo: "/logos/dortmund.png", index: 1 },
+  { name: "RB Leipzig", logo: "/logos/leipzig.png", index: 2 },
+  { name: "Bayer Leverkusen", logo: "/logos/leverkusen.png", index: 3 },
+  { name: "Union Berlin", logo: "/logos/union.png", index: 4 },
+  { name: "SC Freiburg", logo: "/logos/freiburg.png", index: 5 },
+  { name: "Eintracht Frankfurt", logo: "/logos/frankfurt.png", index: 6 },
+  { name: "VfL Wolfsburg", logo: "/logos/wolfsburg.png", index: 7 },
+  { name: "Mainz 05", logo: "/logos/mainz.png", index: 8 },
+  { name: "Borussia Mönchengladbach", logo: "/logos/gladbach.png", index: 9 },
+  { name: "TSG Hoffenheim", logo: "/logos/hoffenheim.png", index: 10 },
+  { name: "VfB Stuttgart", logo: "/logos/stuttgart.png", index: 11 },
+  { name: "FC Augsburg", logo: "/logos/augsburg.png", index: 12 },
+  { name: "Werder Bremen", logo: "/logos/bremen.png", index: 13 },
+  { name: "1. FC Köln", logo: "/logos/koln.png", index: 14 },
+  { name: "Hertha Berlin", logo: "/logos/hertha.png", index: 15 },
+  { name: "VfL Bochum", logo: "/logos/bochum.png", index: 16 },
+  { name: "Heidenheim", logo: "/logos/heidenheim.png", index: 17 },
+];
+
+const bundesliga = [
+  {
+    fixture: [bundesliga_teams[0], bundesliga_teams[1]],
+    time: "10th/12/2024",
+    link: "https://example.com/match-bayern-dortmund",
+    status: "scheduled",
+  },
+  {
+    fixture: [bundesliga_teams[2], bundesliga_teams[3]],
+    time: "10th/12/2024",
+    link: "https://example.com/match-leipzig-leverkusen",
+    status: "scheduled",
+  },
+  {
+    fixture: [bundesliga_teams[4], bundesliga_teams[5]],
+    time: "10th/12/2024",
+    link: "https://example.com/match-union-freiburg",
+    status: "scheduled",
+  },
+  {
+    fixture: [bundesliga_teams[6], bundesliga_teams[7]],
+    time: "11th/12/2024",
+    link: "https://example.com/match-frankfurt-wolfsburg",
+    status: "scheduled",
+  },
+  {
+    fixture: [bundesliga_teams[8], bundesliga_teams[9]],
+    time: "11th/12/2024",
+    link: "https://example.com/match-mainz-gladbach",
+    status: "scheduled",
+  },
+];
+
+// other leagues
+const other_teams = [
+  { name: "Bayern Munich", logo: "/logos/bayern.png", index: 0 },
+  { name: "Borussia Dortmund", logo: "/logos/dortmund.png", index: 1 },
+  { name: "RB Leipzig", logo: "/logos/leipzig.png", index: 2 },
+  { name: "Bayer Leverkusen", logo: "/logos/leverkusen.png", index: 3 },
+  { name: "Union Berlin", logo: "/logos/union.png", index: 4 },
+  { name: "SC Freiburg", logo: "/logos/freiburg.png", index: 5 },
+  { name: "Eintracht Frankfurt", logo: "/logos/frankfurt.png", index: 6 },
+  { name: "VfL Wolfsburg", logo: "/logos/wolfsburg.png", index: 7 },
+  { name: "Mainz 05", logo: "/logos/mainz.png", index: 8 },
+  { name: "Borussia Mönchengladbach", logo: "/logos/gladbach.png", index: 9 },
+  { name: "TSG Hoffenheim", logo: "/logos/hoffenheim.png", index: 10 },
+  { name: "VfB Stuttgart", logo: "/logos/stuttgart.png", index: 11 },
+  { name: "FC Augsburg", logo: "/logos/augsburg.png", index: 12 },
+  { name: "Werder Bremen", logo: "/logos/bremen.png", index: 13 },
+  { name: "1. FC Köln", logo: "/logos/koln.png", index: 14 },
+  { name: "Hertha Berlin", logo: "/logos/hertha.png", index: 15 },
+  { name: "VfL Bochum", logo: "/logos/bochum.png", index: 16 },
+  { name: "Heidenheim", logo: "/logos/heidenheim.png", index: 17 },
+];
+
+const other_leagues = [
+  {
+    fixture: [bundesliga_teams[0], bundesliga_teams[1]],
+    time: "10th/12/2024",
+    link: "https://example.com/match-bayern-dortmund",
+    status: "scheduled",
+  },
+  {
+    fixture: [bundesliga_teams[2], bundesliga_teams[3]],
+    time: "10th/12/2024",
+    link: "https://example.com/match-leipzig-leverkusen",
+    status: "scheduled",
+  },
+  {
+    fixture: [bundesliga_teams[4], bundesliga_teams[5]],
+    time: "10th/12/2024",
+    link: "https://example.com/match-union-freiburg",
+    status: "scheduled",
+  },
+  {
+    fixture: [bundesliga_teams[6], bundesliga_teams[7]],
+    time: "11th/12/2024",
+    link: "https://example.com/match-frankfurt-wolfsburg",
+    status: "scheduled",
+  },
+  {
+    fixture: [bundesliga_teams[8], bundesliga_teams[9]],
+    time: "11th/12/2024",
+    link: "https://example.com/match-mainz-gladbach",
+    status: "scheduled",
+  },
+];
+
 // featured games all leagues
 export const top_games = [
   {
@@ -534,4 +644,6 @@ export const fixtures = [
   { league: "serie_a", matches: serie_a },
   { league: "uefa_champions_league", matches: uefa_champions_league },
   { league: "europa_league", matches: europa_league },
+  { league: "bundesliga", matches: bundesliga },
+  { league: "other_leagues", matches: other_leagues },
 ];

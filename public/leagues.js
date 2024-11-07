@@ -21,16 +21,16 @@ export const leagues = [
   },
   {
     name: "Uefa Champions League",
-    logo: "/logos/kpl.png",
+    logo: "/logos/champions.jpg",
     stage: "Matchday 6",
   },
   {
     name: "Europa League",
-    logo: "/logos/fkf_women.png",
+    logo: "/logos/europa.png",
     stage: "Matchday 1",
   },
   {
-    name: "National Super League",
+    name: "Other leagues",
     logo: "/logos/nsl.jpeg",
     stage: "Ongoing season",
   },
