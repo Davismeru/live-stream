@@ -2,7 +2,7 @@ export const leagues = [
   {
     name: "English Premier League",
     logo: "/logos/epl.png",
-    stage: "Matchday 9",
+    stage: "Matchday 11",
   },
   {
     name: "La Liga",

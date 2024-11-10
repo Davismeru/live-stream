@@ -1,5 +1,5 @@
 // epl
-const epl_teams = [
+export const epl_teams = [
   {
     name: "Arsenal",
     logo: "/logos/arsenal.png",
@@ -103,38 +103,38 @@ const epl_teams = [
 ];
 const english_premier_league = [
   {
-    fixture: [epl_teams[2], epl_teams[12]],
-    time: "25th/11/2024",
+    fixture: [epl_teams[3], epl_teams[2]], //
+    time: "Saturday, 15:00",
     channel: "tnt2_1",
     status: "upcoming",
   },
   {
-    fixture: [epl_teams[9], epl_teams[10]],
-    time: "25th/11/2024",
-    channel: "https://blabla.com",
-    status: "started",
-  },
-  {
-    fixture: [epl_teams[11], epl_teams[4]],
-    time: "25th/11/2024",
+    fixture: [epl_teams[6], epl_teams[8]], //
+    time: "Saturday, 15:00",
     channel: "https://blabla.com",
     status: "upcoming",
   },
   {
-    fixture: [epl_teams[15], epl_teams[18]],
-    time: "25th/11/2024",
-    channel: "https://blabla.com",
-    status: "started",
-  },
-  {
-    fixture: [epl_teams[16], epl_teams[7]],
-    time: "25th/11/2024",
+    fixture: [epl_teams[18], epl_teams[7]], //
+    time: "Saturday, 15:00",
     channel: "https://blabla.com",
     status: "upcoming",
   },
   {
-    fixture: [epl_teams[19], epl_teams[6]],
-    time: "25th/11/2024",
+    fixture: [epl_teams[19], epl_teams[16]], //
+    time: "Saturday, 15:00",
+    channel: "https://blabla.com",
+    status: "upcoming",
+  },
+  {
+    fixture: [epl_teams[4], epl_teams[12]], //
+    time: "Saturday, 17:30",
+    channel: "https://blabla.com",
+    status: "upcoming",
+  },
+  {
+    fixture: [epl_teams[11], epl_teams[1]], //
+    time: "Saturday, 20:00",
     channel: "https://blabla.com",
     status: "upcoming",
   },
