@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fixtures } from "../../public/fixtures";
 import EmailSubscription from "../components/EmailSubscription";
 import MatchCard from "../components/MatchCard";
 import "../css/SelectedLeague.css";
 import AdsterraAd from "../components/AdsterraAd";
+import axios from "axios";
+import { base_api_uri } from "../assets/constants";
 
 function SelectedLeague() {
   const { selected_league } = useParams();
   const [displayFixtures, setDisplayFixtures] = useState([]);
 
   useEffect(() => {
-    fixtures.map((item) => {
-      if (item.league == selected_league) {
-        setDisplayFixtures(item.matches);
-      }
+    axios.get(`${base_api_uri}/admin/get_fixtures`).then((res) => {
+      const fixtures = res.data;
+      fixtures.map((item) => {
+        if (item.league == selected_league) {
+          setDisplayFixtures(item.matches);
+        }
+      });
     });
   }, []);
 

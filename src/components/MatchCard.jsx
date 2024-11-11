@@ -1,12 +1,15 @@
 import React from "react";
 import "../css/MatchCard.css";
 import { Link } from "react-router-dom";
+import { epl_teams, la_liga_teams } from "../../public/fixtures";
 
 function MatchCard({ fixture }) {
-  const teamsPlaying = fixture.fixture;
+  const teamsPlaying = eval(fixture.fixture);
   const matchStatus = fixture.status;
   const matchChannel = fixture.channel;
   const matchTIme = fixture.time;
+  console.log(typeof teamsPlaying);
+
   return (
     <Link
       to={
