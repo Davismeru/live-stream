@@ -1,9 +1,9 @@
 .leagues-container {
-  @apply py-16 bg-gray-800 text-white;
+  @apply py-16 bg-gray-800 text-white text-center relative;
 }
 
 .leagues-container section {
-  @apply max-w-6xl mx-auto px-8 text-center;
+  @apply max-w-6xl mx-auto px-8;
 }
 
 .league-cards {

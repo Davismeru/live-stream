@@ -9,6 +9,7 @@ import BuyMeACoffee from "./pages/BuyMeACoffee";
 import BlogPage from "./pages/Blog";
 import BlogsHome from "./pages/BlogsHome";
 import MatchUpdater from "./pages/MatchUpdater";
+import LeagueUpdater from "./pages/LeagueUpdater";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/blog/:title" Component={BlogPage} />
           <Route path="/blog" Component={BlogsHome} />
           <Route path="/admin/update_matches" Component={MatchUpdater} />
+          <Route path="/admin/update_leagues" Component={LeagueUpdater} />
         </Routes>
       </Router>
     </div>

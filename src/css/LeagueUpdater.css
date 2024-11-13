@@ -1,0 +1,28 @@
+.league-updater-container {
+  @apply p-5;
+}
+
+.add-league-section {
+  @apply mb-10;
+}
+
+.add-league-section h1,
+.display-leagues h1 {
+  @apply text-xl font-semibold text-gray-700 mb-3;
+}
+
+.add-league-section form {
+  @apply flex flex-col;
+}
+
+.add-league-section input {
+  @apply p-2 outline-none border border-gray-400 rounded-md mb-2;
+}
+
+.add-league-section button {
+  @apply bg-gray-800 text-white p-2 rounded-md w-36;
+}
+
+.display-leagues section {
+  @apply bg-gray-800 text-white mb-2 p-2 rounded-md;
+}

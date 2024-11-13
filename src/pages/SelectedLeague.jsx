@@ -11,7 +11,10 @@ function SelectedLeague() {
   const { selected_league } = useParams();
   const [displayFixtures, setDisplayFixtures] = useState([]);
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
+    setLoading(true);
     axios.get(`${base_api_uri}/admin/get_fixtures`).then((res) => {
       const fixtures = res.data;
       fixtures.map((item) => {
@@ -19,6 +22,8 @@ function SelectedLeague() {
           setDisplayFixtures(item.matches);
         }
       });
+
+      setLoading(false);
     });
   }, []);
 
@@ -26,11 +31,17 @@ function SelectedLeague() {
     <div>
       <h1 className="league-title">{selected_league.split("_").join(" ")}</h1>
       <AdsterraAd />
-      <div className="fixtures">
-        {displayFixtures.map((fixture, i) => {
-          return <MatchCard key={i} fixture={fixture} />;
-        })}
-      </div>
+      {!loading && (
+        <div className="fixtures">
+          {displayFixtures.map((fixture, i) => {
+            return <MatchCard key={i} fixture={fixture} />;
+          })}
+        </div>
+      )}
+
+      {loading && (
+        <img src="/loader.gif" alt="loading..." className="loader-gif" />
+      )}
       <AdsterraAd />
       <EmailSubscription />
     </div>

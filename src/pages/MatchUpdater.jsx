@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { base_api_uri } from "../assets/constants";
 import "../css/MatchUpdater.css";
-import { epl_teams } from "../../public/fixtures";
+import { epl_teams, la_liga_teams } from "../../public/fixtures";
 
 function MatchUpdater() {
   const [allFixtures, setAllFixtures] = useState(null);
