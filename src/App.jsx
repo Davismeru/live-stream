@@ -10,6 +10,9 @@ import BlogPage from "./pages/Blog";
 import BlogsHome from "./pages/BlogsHome";
 import MatchUpdater from "./pages/MatchUpdater";
 import LeagueUpdater from "./pages/LeagueUpdater";
+import Footer from "./components/Footer";
+import AdminRegister from "./pages/AdminRegister";
+import AdminSignin from "./pages/AdminSignin";
 
 function App() {
   return (
@@ -26,8 +29,11 @@ function App() {
           <Route path="/blog" Component={BlogsHome} />
           <Route path="/admin/update_matches" Component={MatchUpdater} />
           <Route path="/admin/update_leagues" Component={LeagueUpdater} />
+          <Route path="/register_admin" Component={AdminRegister} />
+          <Route path="/admin_signin" Component={AdminSignin} />
         </Routes>
       </Router>
+      <Footer />
     </div>
   );
 }

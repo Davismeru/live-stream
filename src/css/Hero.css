@@ -18,3 +18,15 @@
 .hero-section p {
   @apply text-xl mb-6;
 }
+
+.featured-game h1 {
+  @apply font-semibold text-xl;
+}
+
+.hero-featured-game {
+  @apply flex items-center justify-center gap-5;
+}
+
+.hero-featured-game img {
+  @apply w-28;
+}

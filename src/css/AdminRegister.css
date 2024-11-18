@@ -1,0 +1,15 @@
+.register-container {
+  @apply h-screen flex items-center justify-center px-5 bg-gray-100;
+}
+
+.register-container form {
+  @apply shadow-lg flex flex-col p-5 bg-white w-full md:w-1/2;
+}
+
+.register-container input {
+  @apply border p-2 mb-3 rounded-md;
+}
+
+.register-container button {
+  @apply bg-blue-500 text-white p-2 rounded-md;
+}

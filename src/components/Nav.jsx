@@ -30,7 +30,7 @@ function Nav() {
       </Link>
       <nav>
         <a href="#pricing" className="hover:underline">
-          Get updates
+          Contact us
         </a>
         <Link to="/blog">Blog</Link>
         <Link to="/buy_me_a_coffe">

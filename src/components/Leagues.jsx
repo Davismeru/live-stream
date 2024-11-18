@@ -28,7 +28,9 @@ function Leagues() {
                   .toLocaleLowerCase()
                   .split(" ")
                   .join("_")}`}
-                className="league-card"
+                className={
+                  league.name == "top_games" ? "hidden" : "league-card"
+                }
                 key={league.name}
               >
                 <h4>{league.name}</h4>

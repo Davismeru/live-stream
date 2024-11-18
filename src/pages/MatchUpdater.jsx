@@ -13,11 +13,17 @@ function MatchUpdater() {
   const [time, setTime] = useState("");
   const [channel, setChannel] = useState("");
   const [status, setStatus] = useState("");
-  console.log(allFixtures);
+
+  // loading state
+  const [loading, setLoading] = useState(false);
+
+  // error state
+  const [error, setError] = useState("");
 
   const handleUpdateMatch = async (e, league, gameIndex) => {
     e.preventDefault();
 
+    setLoading(true);
     const res = await axios.patch(`${base_api_uri}/admin/update_fixtures`, {
       league,
       index: gameIndex,
@@ -27,83 +33,129 @@ function MatchUpdater() {
       status,
     });
 
-    console.log(league, gameIndex, fixture, time, channel, status);
+    setLoading(false);
   };
-  useEffect(() => {
-    axios.get(`${base_api_uri}/admin/get_fixtures`).then((res) => {
-      setAllFixtures(res.data);
+
+  const handleAddField = async (e, league) => {
+    e.preventDefault();
+    setLoading(true);
+    const res = await axios.patch(`${base_api_uri}/admin/update_fixtures`, {
+      league,
+      index: 99,
+      fixture: "[epl_teams[0], epl_teams[1]]",
+      time: "00:00",
+      channel: "channel",
+      status: "upcoming",
     });
+
+    setLoading(false);
+  };
+
+  const token = sessionStorage.getItem("token");
+  useEffect(() => {
+    if (!token) {
+      setError("you are not signed in");
+    } else {
+      axios
+        .post(`${base_api_uri}/admin/verify_token`, {
+          token,
+        })
+        .then((response) => {
+          if (!response.data.error) {
+            axios.get(`${base_api_uri}/admin/get_fixtures`).then((res) => {
+              setAllFixtures(res.data);
+              setError("");
+            });
+          } else {
+            setError(response.data.error);
+          }
+        });
+    }
   }, []);
   return (
     <div className="match-updater-container">
-      {allFixtures?.map((item, i) => {
-        return (
-          <div key={i} className="league-section">
-            <h1 className="uppercase">{item.league.split("_").join(" ")}</h1>
+      {error && <p className="text-red-500">{error}</p>}
+      {!error &&
+        allFixtures?.map((item, i) => {
+          console.log(item);
+          return (
+            <div key={i} className="league-section">
+              <h1 className="uppercase">{item.league.split("_").join(" ")}</h1>
 
-            {/* updating games form */}
-            <form>
-              {item.matches.map((match, index) => {
-                const fixture = eval(match.fixture);
-                const league = item.league;
+              {/* updating games form */}
+              <form>
+                {item.matches.map((match, index) => {
+                  const fixture = eval(match.fixture);
+                  const league = item.league;
 
-                return (
-                  <section key={index} className="match-section">
-                    {/* fixture details */}
-                    <p>
-                      {index}. {fixture[0].name} vs {fixture[1].name}
-                    </p>
-                    {/* inputs */}
-                    <div className="match-inputs">
-                      <input
-                        type="text"
-                        placeholder="fixture"
-                        onChange={(e) => setFixture(e.target.value)}
-                        className="w-full"
-                      />
-                      <input
-                        type="text"
-                        placeholder="channel"
-                        onChange={(e) => setChannel(e.target.value)}
-                      />
-                      <input
-                        type="text"
-                        placeholder="time"
-                        onChange={(e) => setTime(e.target.value)}
-                      />{" "}
-                      {/* status */}
-                      <div>
-                        <p>Status</p>
+                  return (
+                    <section key={index} className="match-section">
+                      {/* fixture details */}
+                      <p>
+                        {index}. {fixture[0].name} vs {fixture[1].name}
+                      </p>
+                      {/* inputs */}
+                      <div className="match-inputs">
                         <input
-                          type="radio"
-                          name="status"
-                          value="upcoming"
-                          onChange={(e) => setStatus(e.target.value)}
-                        />{" "}
-                        upcoming
+                          type="text"
+                          placeholder="fixture"
+                          onChange={(e) => setFixture(e.target.value)}
+                          className="w-full"
+                        />
                         <input
-                          type="radio"
-                          name="status"
-                          value="started"
-                          onChange={(e) => setStatus(e.target.value)}
+                          type="text"
+                          placeholder="channel"
+                          onChange={(e) => setChannel(e.target.value)}
+                        />
+                        <input
+                          type="text"
+                          placeholder="time"
+                          onChange={(e) => setTime(e.target.value)}
                         />{" "}
-                        started
+                        {/* status */}
+                        <div>
+                          <p>Status</p>
+                          <input
+                            type="radio"
+                            name="status"
+                            value="upcoming"
+                            onChange={(e) => setStatus(e.target.value)}
+                          />{" "}
+                          upcoming
+                          <input
+                            type="radio"
+                            name="status"
+                            value="started"
+                            onChange={(e) => setStatus(e.target.value)}
+                          />{" "}
+                          started
+                        </div>
+                        <br />
                       </div>
-                      <br />
-                    </div>
-                    <button
-                      className="fixture-update-btn"
-                      onClick={(e) => handleUpdateMatch(e, item.league, index)}
-                    >
-                      update
-                    </button>
-                  </section>
-                );
-              })}
-            </form>
-          </div>
-        );
-      })}
+                      <button
+                        className="fixture-update-btn"
+                        onClick={(e) =>
+                          handleUpdateMatch(e, item.league, index)
+                        }
+                      >
+                        {loading ? "just a sec..." : "update"}
+                      </button>
+                    </section>
+                  );
+                })}
+              </form>
+
+              <form>
+                <button
+                  className="p-2 rounded-md bg-orange-500 text-white mb-5 w-1/2"
+                  onClick={(e) => handleAddField(e, item.league)}
+                >
+                  {loading ? "just a sec..." : "Add field"}
+                </button>
+              </form>
+            </div>
+          );
+        })}
     </div>
   );
 }
