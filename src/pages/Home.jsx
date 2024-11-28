@@ -5,7 +5,6 @@ import Leagues from "../components/Leagues";
 import EmailSubscription from "../components/EmailSubscription";
 import axios from "axios";
 import { base_api_uri } from "../assets/constants";
-import { epl_teams, la_liga_teams } from "../../public/fixtures";
 
 function Home() {
   // get featured games

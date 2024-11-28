@@ -8,7 +8,6 @@ function MatchUpdater() {
   const [allFixtures, setAllFixtures] = useState(null);
 
   // input states
-  const [league, setLeague] = useState("");
   const [fixture, setFixture] = useState("");
   const [time, setTime] = useState("");
   const [channel, setChannel] = useState("");
@@ -24,15 +23,31 @@ function MatchUpdater() {
     e.preventDefault();
 
     setLoading(true);
-    const res = await axios.patch(`${base_api_uri}/admin/update_fixtures`, {
+    if (!fixture || !time || !channel || !status) {
+      setError("fill all the fields");
+    } else {
+      await axios.patch(`${base_api_uri}/admin/update_fixtures`, {
+        league,
+        index: gameIndex,
+        fixture,
+        time,
+        channel,
+        status,
+      });
+      setLoading(false);
+    }
+  };
+
+  // delete match
+  const handleDeleteMatch = async (e, league, gameIndex) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    await axios.patch(`${base_api_uri}/admin/delete_fixture`, {
       league,
       index: gameIndex,
-      fixture,
-      time,
-      channel,
-      status,
     });
-
     setLoading(false);
   };
 
@@ -74,6 +89,7 @@ function MatchUpdater() {
   }, []);
   return (
     <div className="match-updater-container">
+      {console.log(allFixtures)}
       {error && <p className="text-red-500">{error}</p>}
       {!error &&
         allFixtures?.map((item, i) => {
@@ -139,6 +155,15 @@ function MatchUpdater() {
                         }
                       >
                         {loading ? "just a sec..." : "update"}
+                      </button>
+
+                      <button
+                        className="fixture-update-btn"
+                        onClick={(e) =>
+                          handleDeleteMatch(e, item.league, index)
+                        }
+                      >
+                        {loading ? "just a sec..." : "delete"}
                       </button>
                     </section>
                   );

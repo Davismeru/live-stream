@@ -1,14 +1,21 @@
 // src/components/LandingPage.js
 import React from "react";
 import "../css/Hero.css";
-import { epl_teams, la_liga_teams } from "../../public/fixtures";
+import {
+  epl_teams,
+  la_liga_teams,
+  serie_a_teams,
+  champions_league_teams,
+  europa_league_teams,
+  bundesliga_teams,
+  other_teams,
+} from "../../public/fixtures";
 import { Link } from "react-router-dom";
 
 function Hero({ featured_game }) {
   const fixture = eval(featured_game?.fixture);
   return (
     <div className="hero-container">
-      {console.log(fixture)}
       {/* Hero Section */}
       <section className="hero-section">
         <div className="max-w-2xl">

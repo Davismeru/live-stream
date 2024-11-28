@@ -1,14 +1,21 @@
 import React from "react";
 import "../css/MatchCard.css";
 import { Link } from "react-router-dom";
-import { epl_teams, la_liga_teams } from "../../public/fixtures";
+import {
+  epl_teams,
+  la_liga_teams,
+  serie_a_teams,
+  champions_league_teams,
+  europa_league_teams,
+  bundesliga_teams,
+  other_teams,
+} from "../../public/fixtures";
 
 function MatchCard({ fixture }) {
   const teamsPlaying = eval(fixture.fixture);
   const matchStatus = fixture.status;
   const matchChannel = fixture.channel;
   const matchTIme = fixture.time;
-  console.log(typeof teamsPlaying);
 
   return (
     <Link
@@ -21,7 +28,6 @@ function MatchCard({ fixture }) {
       <div className="matchcard-container">
         {/* team names and logos */}
         <div className="teams">
-          {console.log(fixture)}
           {/* team one */}
           <section>
             <p>{teamsPlaying[0].name}</p>

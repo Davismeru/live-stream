@@ -13,6 +13,7 @@ import LeagueUpdater from "./pages/LeagueUpdater";
 import Footer from "./components/Footer";
 import AdminRegister from "./pages/AdminRegister";
 import AdminSignin from "./pages/AdminSignin";
+import AddBlog from "./pages/AddBlog";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/admin/update_leagues" Component={LeagueUpdater} />
           <Route path="/register_admin" Component={AdminRegister} />
           <Route path="/admin_signin" Component={AdminSignin} />
+          <Route path="/admin/add_blog" Component={AddBlog} />
         </Routes>
       </Router>
       <Footer />

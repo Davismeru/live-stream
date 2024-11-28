@@ -17,6 +17,8 @@ function SelectedLeague() {
     setLoading(true);
     axios.get(`${base_api_uri}/admin/get_fixtures`).then((res) => {
       const fixtures = res.data;
+      console.log(fixtures);
+
       fixtures.map((item) => {
         if (item.league == selected_league) {
           setDisplayFixtures(item.matches);

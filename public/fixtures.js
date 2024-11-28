@@ -262,30 +262,3 @@ export const other_teams = [
   { name: "VfL Bochum", logo: "/logos/bochum.png", index: 16 },
   { name: "Heidenheim", logo: "/logos/heidenheim.png", index: 17 },
 ];
-
-// featured games all leagues
-export const top_games = [
-  {
-    fixture: [epl_teams[13], epl_teams[5]],
-    time: "25th/11/2024",
-    channel: "tnt",
-    status: "upcoming",
-    league: "english premier league",
-  },
-
-  {
-    fixture: [la_liga_teams[4], la_liga_teams[5]],
-    time: "25th/11/2024",
-    channel: "https://blabla.com",
-    status: "upcoming",
-    league: "la liga",
-  },
-
-  {
-    fixture: [champions_league_teams[1], champions_league_teams[6]],
-    time: "27th/11/2024",
-    channel: "https://example.com/match-arsenal-barcelona",
-    status: "scheduled",
-    league: "uefa champions league",
-  },
-];
