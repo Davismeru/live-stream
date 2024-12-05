@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import AdminRegister from "./pages/AdminRegister";
 import AdminSignin from "./pages/AdminSignin";
 import AddBlog from "./pages/AddBlog";
+import TeamIndexes from "./pages/TeamIndexes";
 
 function App() {
   return (
@@ -26,16 +27,17 @@ function App() {
           <Route path="/stream/:channel" Component={StreamingPage} />
           <Route path="/fixture/not_started" Component={NotStarted} />
           <Route path="/buy_me_a_coffe" Component={BuyMeACoffee} />
-          <Route path="/blog/:title" Component={BlogPage} />
+          <Route path="/blog/:id" Component={BlogPage} />
           <Route path="/blog" Component={BlogsHome} />
           <Route path="/admin/update_matches" Component={MatchUpdater} />
           <Route path="/admin/update_leagues" Component={LeagueUpdater} />
           <Route path="/register_admin" Component={AdminRegister} />
           <Route path="/admin_signin" Component={AdminSignin} />
           <Route path="/admin/add_blog" Component={AddBlog} />
+          <Route path="/index" Component={TeamIndexes} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

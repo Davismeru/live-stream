@@ -2,7 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { base_api_uri } from "../assets/constants";
 import "../css/MatchUpdater.css";
-import { epl_teams, la_liga_teams } from "../../public/fixtures";
+import {
+  epl_teams,
+  la_liga_teams,
+  serie_a_teams,
+  champions_league_teams,
+  europa_league_teams,
+  bundesliga_teams,
+  other_teams,
+} from "../../public/fixtures";
 
 function MatchUpdater() {
   const [allFixtures, setAllFixtures] = useState(null);
@@ -21,6 +29,7 @@ function MatchUpdater() {
 
   const handleUpdateMatch = async (e, league, gameIndex) => {
     e.preventDefault();
+    console.log(gameIndex);
 
     setLoading(true);
     if (!fixture || !time || !channel || !status) {
@@ -53,10 +62,12 @@ function MatchUpdater() {
 
   const handleAddField = async (e, league) => {
     e.preventDefault();
+    const randomIndex = Math.floor(Math.random() * 100000);
+
     setLoading(true);
     const res = await axios.patch(`${base_api_uri}/admin/update_fixtures`, {
       league,
-      index: 99,
+      index: randomIndex,
       fixture: "[epl_teams[0], epl_teams[1]]",
       time: "00:00",
       channel: "channel",
@@ -89,11 +100,9 @@ function MatchUpdater() {
   }, []);
   return (
     <div className="match-updater-container">
-      {console.log(allFixtures)}
       {error && <p className="text-red-500">{error}</p>}
       {!error &&
         allFixtures?.map((item, i) => {
-          console.log(item);
           return (
             <div key={i} className="league-section">
               <h1 className="uppercase">{item.league.split("_").join(" ")}</h1>
@@ -151,7 +160,7 @@ function MatchUpdater() {
                       <button
                         className="fixture-update-btn"
                         onClick={(e) =>
-                          handleUpdateMatch(e, item.league, index)
+                          handleUpdateMatch(e, item.league, match.index)
                         }
                       >
                         {loading ? "just a sec..." : "update"}
@@ -160,23 +169,25 @@ function MatchUpdater() {
                       <button
                         className="fixture-update-btn"
                         onClick={(e) =>
-                          handleDeleteMatch(e, item.league, index)
+                          handleDeleteMatch(e, item.league, match.index)
                         }
                       >
+                        {console.log(item)}
+
                         {loading ? "just a sec..." : "delete"}
                       </button>
+                      <br />
+                      {index == item.matches.length - 1 && (
+                        <button
+                          className="p-2 rounded-md bg-orange-500 text-white mb-5 w-1/2 mt-4"
+                          onClick={(e) => handleAddField(e, item.league)}
+                        >
+                          {loading ? "just a sec..." : "Add field"}
+                        </button>
+                      )}
                     </section>
                   );
                 })}
-              </form>
-
-              <form>
-                <button
-                  className="p-2 rounded-md bg-orange-500 text-white mb-5 w-1/2"
-                  onClick={(e) => handleAddField(e, item.league)}
-                >
-                  {loading ? "just a sec..." : "Add field"}
-                </button>
               </form>
             </div>
           );

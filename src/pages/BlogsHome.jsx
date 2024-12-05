@@ -1,143 +1,90 @@
-// BlogHome.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { base_api_uri } from "../assets/constants";
+import "../css/BlogsHome.css";
 import { Link } from "react-router-dom";
 
-const blogPosts = [
-  // Sample blog posts for pagination
-  {
-    id: 1,
-    title: "Understanding React Components",
-    image: "https://via.placeholder.com/150",
-    content:
-      "React components are the building blocks of any React application...",
-    category: "React",
-  },
-  {
-    id: 2,
-    title: "Getting Started with Tailwind CSS",
-    image: "https://via.placeholder.com/150",
-    content:
-      "Tailwind CSS is a utility-first CSS framework for rapidly building custom designs...",
-    category: "CSS",
-  },
-  {
-    id: 3,
-    title: "Mastering JavaScript Basics",
-    image: "https://via.placeholder.com/150",
-    content:
-      "JavaScript is a versatile programming language used to add interactivity to websites...",
-    category: "JavaScript",
-  },
-  {
-    id: 4,
-    title: "Advanced CSS Techniques",
-    image: "https://via.placeholder.com/150",
-    content: "CSS allows for creating visually appealing websites...",
-    category: "CSS",
-  },
-  {
-    id: 5,
-    title: "React State Management",
-    image: "https://via.placeholder.com/150",
-    content:
-      "State management is a crucial part of complex React applications...",
-    category: "React",
-  },
-  // Add more blog posts for demonstration
-];
-
-const categories = ["All", "React", "CSS", "JavaScript"];
-const postsPerPage = 3;
-
 const BlogsHome = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [blogs, setBlogs] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
 
-  // Filter posts based on the selected category
-  const filteredPosts =
-    selectedCategory === "All"
-      ? blogPosts
-      : blogPosts.filter((post) => post.category === selectedCategory);
-
-  // Calculate the paginated posts to show on the current page
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
-
-  // Handle pagination
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-
-  const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
+  const handleNextPage = () => {
+    if (page < blogs.totalPages) {
+      setPage(page + 1);
+    }
   };
 
-  return (
-    <div className="max-w-4xl mx-auto p-6">
-      {/* Categories Section */}
-      <div className="mb-8">
-        <div className="flex gap-4">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`py-2 px-4 rounded-lg ${
-                selectedCategory === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700"
-              }`}
-              onClick={() => {
-                setSelectedCategory(category);
-                setCurrentPage(1); // Reset to page 1 when category changes
-              }}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
 
-      {/* Blog Posts Section */}
-      <div className="space-y-8 mb-8">
-        {currentPosts.map((post) => (
-          <div
-            key={post.id}
-            className="flex items-start bg-white rounded-lg shadow-md p-4"
-          >
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-24 h-24 object-cover rounded-md mr-4"
-            />
-            <div>
-              <h3 className="text-xl font-bold">{post.title}</h3>
-              <p className="text-gray-600 mt-2">
-                {post.content.substring(0, 80)}...
-              </p>
-              <Link
-                to="/blog/title"
-                className="mt-4 text-blue-600 hover:underline"
-              >
-                Read more
-              </Link>
+  useEffect(() => {
+    setLoading(true);
+    axios.get(`${base_api_uri}/display_blogs?page=${page}`).then((res) => {
+      setBlogs(res.data);
+      setLoading(false);
+    });
+  }, [page]);
+
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="blogs-hero">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-4">BallHub News Center</h2>
+          <p className="mb-6">Dive Into the Latest Football Stories</p>
+        </div>
+      </section>
+
+      {/* Blogs Section */}
+      {!loading && (
+        <section className="py-10">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {blogs?.blogs?.map((blog, i) => (
+                <div
+                  key={i}
+                  className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow"
+                >
+                  {/* img section */}
+                  <section className="blog-img">
+                    <img src={blog.img} alt="" />
+                  </section>
+                  <section>
+                    <h3 className="text-xl font-bold mb-2">{blog.headline}</h3>
+                    <p className="text-gray-600">
+                      {blog.content.slice(0, 86)}....
+                    </p>
+                    <Link
+                      to={`/blog/${blog._id}`}
+                      className="text-blue-600 hover:underline mt-4 block"
+                    >
+                      Read More
+                    </Link>
+                  </section>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
+        </section>
+      )}
 
-      {/* Pagination Section */}
-      <div className="flex justify-center items-center space-x-4">
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            onClick={() => goToPage(index + 1)}
-            className={`px-3 py-1 rounded-lg ${
-              currentPage === index + 1
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-700"
-            }`}
-          >
-            {index + 1}
-          </button>
-        ))}
+      {loading && (
+        <img
+          src="/loader.gif"
+          alt="loading..."
+          className="mx-auto w-12 my-24"
+        />
+      )}
+
+      {/* pagination buttons */}
+      <div className="pagination-section">
+        {console.log(blogs.blogs)}
+        <button onClick={() => handlePrevPage()}>Prev</button>
+        <button onClick={() => handleNextPage()}>Next</button>
       </div>
     </div>
   );
