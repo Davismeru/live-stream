@@ -147,7 +147,11 @@ export const serie_a_teams = [
   { name: "Parma", logo: "/logos/parma.png", index: 16 },
   { name: "Genoa", logo: "/logos/genoa.png", index: 17 },
   { name: "Lecce", logo: "/logos/lecce.png", index: 18 },
-  { name: "Sassuolo", logo: "/logos/sassuolo.png", index: 19 },
+  {
+    name: "Venezia fc",
+    logo: "https://brandlogos.net/wp-content/uploads/2021/12/venezia_fc-brandlogo.net_-512x512.png",
+    index: 19,
+  },
 ];
 
 // champions league
