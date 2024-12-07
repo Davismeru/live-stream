@@ -21,7 +21,7 @@ function Hero({ featured_game }) {
         <div className="max-w-2xl">
           <h2>Your Ultimate Football Streaming Hub</h2>
           <p>
-            Stream your favorite football matches live and never miss a moment.
+            Stream your favorite football matches live and never miss a moment!
           </p>
 
           {/* featured game section */}
