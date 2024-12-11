@@ -110,7 +110,7 @@ export const la_liga_teams = [
   { index: 3, name: "Sevilla", logo: "/logos/sevilla.png" },
   { index: 4, name: "Real Sociedad", logo: "/logos/sociedad.png" },
   { index: 5, name: "Real Betis", logo: "/logos/betis.png" },
-  { index: 6, name: "Athletic Club", logo: "/logos/athletic.png" },
+  { index: 6, name: "Athletic Bilbao", logo: "/logos/athletic.png" },
   { index: 7, name: "Villarreal", logo: "/logos/villarreal.png" },
   { index: 8, name: "Valencia", logo: "/logos/valencia.png" },
   { index: 9, name: "Osasuna", logo: "/logos/osasuna.png" },
@@ -123,7 +123,11 @@ export const la_liga_teams = [
   { index: 16, name: "Espanyol", logo: "/logos/espanyol.png" },
   { index: 17, name: "Alaves", logo: "/logos/alaves.png" },
   { index: 18, name: "Leganes", logo: "/logos/leganes.png" },
-  { index: 19, name: "Valladolid", logo: "/logos/valladolid.png" },
+  {
+    index: 19,
+    name: "Valladolid",
+    logo: "https://brandlogos.net/wp-content/uploads/2012/12/real-valladolid-logo-vector.png",
+  },
 ];
 
 // serie A
@@ -210,7 +214,7 @@ export const europa_league_teams = [
   { name: "Ajax", logo: "/logos/ajax.png", index: 11 },
   { name: "Rangers", logo: "/logos/rangers.png", index: 12 },
   { name: "Fenerbahçe", logo: "/logos/fenerbahce.png", index: 13 },
-  { name: "Manchester United", logo: "/logos/manchester.png", index: 14 }, // Added Manchester United
+  { name: "Manchester United", logo: "/logos/manchester.png", index: 14 },
   { name: "Sparta Prague", logo: "/logos/sparta.png", index: 15 },
   { name: "Union Saint-Gilloise", logo: "/logos/union.png", index: 16 },
   { name: "Slavia Prague", logo: "/logos/slavia.png", index: 17 },
@@ -225,7 +229,7 @@ export const europa_league_teams = [
 
 // bundesliga
 export const bundesliga_teams = [
-  { name: "Bayern Munich", logo: "/logos/bayern.png", index: 0 },
+  { name: "Bayern Munchen", logo: "/logos/bayern.png", index: 0 },
   { name: "Borussia Dortmund", logo: "/logos/dortmund.png", index: 1 },
   { name: "RB Leipzig", logo: "/logos/leipzig.png", index: 2 },
   { name: "Bayer Leverkusen", logo: "/logos/leverkusen.png", index: 3 },
@@ -239,8 +243,16 @@ export const bundesliga_teams = [
   { name: "VfB Stuttgart", logo: "/logos/stuttgart.png", index: 11 },
   { name: "FC Augsburg", logo: "/logos/augsburg.png", index: 12 },
   { name: "Werder Bremen", logo: "/logos/bremen.png", index: 13 },
-  { name: "1. FC Köln", logo: "/logos/koln.png", index: 14 },
-  { name: "Hertha Berlin", logo: "/logos/hertha.png", index: 15 },
+  {
+    name: "Holstein Kiel",
+    logo: "https://brandlogos.net/wp-content/uploads/2013/10/kieler-sv-holstein-vector-logo.png",
+    index: 14,
+  },
+  {
+    name: "St Pauli",
+    logo: "https://brandlogos.net/wp-content/uploads/2013/10/fc-st-pauli-vector-logo.png",
+    index: 15,
+  },
   { name: "VfL Bochum", logo: "/logos/bochum.png", index: 16 },
   { name: "Heidenheim", logo: "/logos/heidenheim.png", index: 17 },
 ];
