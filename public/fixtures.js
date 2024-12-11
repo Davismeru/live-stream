@@ -239,8 +239,16 @@ export const bundesliga_teams = [
   { name: "VfL Wolfsburg", logo: "/logos/wolfsburg.png", index: 7 },
   { name: "Mainz 05", logo: "/logos/mainz.png", index: 8 },
   { name: "Borussia Mönchengladbach", logo: "/logos/gladbach.png", index: 9 },
-  { name: "TSG Hoffenheim", logo: "/logos/hoffenheim.png", index: 10 },
-  { name: "VfB Stuttgart", logo: "/logos/stuttgart.png", index: 11 },
+  {
+    name: "TSG Hoffenheim",
+    logo: "https://brandlogos.net/wp-content/uploads/2019/03/tsg_1899_hoffenheim-logo-brandlogo.net_-512x512.png",
+    index: 10,
+  },
+  {
+    name: "VfB Stuttgart",
+    logo: "https://brandlogos.net/wp-content/uploads/2015/10/vfb_stuttgart-logo_brandlogos.net_9xh8z-512x577.png",
+    index: 11,
+  },
   { name: "FC Augsburg", logo: "/logos/augsburg.png", index: 12 },
   { name: "Werder Bremen", logo: "/logos/bremen.png", index: 13 },
   {
@@ -254,7 +262,11 @@ export const bundesliga_teams = [
     index: 15,
   },
   { name: "VfL Bochum", logo: "/logos/bochum.png", index: 16 },
-  { name: "Heidenheim", logo: "/logos/heidenheim.png", index: 17 },
+  {
+    name: "Heidenheim",
+    logo: "https://brandlogos.net/wp-content/uploads/2019/03/1._fc_heidenheim-logo_brandlogos.net_6raa1-512x627.png",
+    index: 17,
+  },
 ];
 
 // other leagues
