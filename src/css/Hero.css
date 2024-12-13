@@ -8,7 +8,7 @@
   background-size: cover;
   background-position: center;
 
-  @apply flex-1 flex items-center justify-center text-center text-white py-10;
+  @apply flex-1 flex items-center justify-center text-center text-white py-10 px-5;
 }
 
 .hero-section h2 {
@@ -27,6 +27,10 @@
   @apply flex items-center justify-center gap-5;
 }
 
+.hero-featured-game section {
+  @apply flex flex-col items-center;
+}
+
 .hero-featured-game img {
-  @apply w-28;
+  @apply w-28 object-cover;
 }

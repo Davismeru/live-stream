@@ -39,6 +39,10 @@ function Leagues() {
               </Link>
             ))}
           </div>
+          <br />
+          <h6 className="text-center font-semibold text-white text-2xl">
+            More Leagues Coming Soon!!
+          </h6>
         </section>
       )}
 

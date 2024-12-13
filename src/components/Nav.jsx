@@ -29,9 +29,7 @@ function Nav() {
         </h1>
       </Link>
       <nav>
-        <a href="#pricing" className="hover:underline">
-          Contact us
-        </a>
+        <Link className="hover:underline">Share</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/buy_me_a_coffe">
           <button className="coffee-btn">Buy me a coffee</button>

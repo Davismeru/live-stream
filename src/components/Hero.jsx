@@ -43,6 +43,14 @@ function Hero({ featured_game }) {
               </div>
             )}
 
+            {!fixture && (
+              <img
+                src="/loader.gif"
+                alt="just a sec..."
+                className="mx-auto w-10"
+              />
+            )}
+
             <p>{featured_game?.time}</p>
             <Link
               to={
