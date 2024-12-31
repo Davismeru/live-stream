@@ -17,3 +17,11 @@
 .matchcard-container .teams section img {
   @apply h-20;
 }
+
+.server_buttons {
+  @apply flex items-center justify-center gap-3 text-gray-700 text-sm;
+}
+
+.server_buttons button {
+  @apply bg-white px-2 my-2 rounded-sm;
+}

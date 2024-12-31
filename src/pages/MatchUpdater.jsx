@@ -20,6 +20,8 @@ function MatchUpdater() {
   const [time, setTime] = useState("");
   const [channel, setChannel] = useState("");
   const [status, setStatus] = useState("");
+  const [sub_channel, setSub_channel] = useState("");
+  const [channel_2, setChannel_2] = useState("");
 
   // loading state
   const [loading, setLoading] = useState(false);
@@ -42,6 +44,8 @@ function MatchUpdater() {
         time,
         channel,
         status,
+        channel_2,
+        sub_channel,
       });
       setLoading(false);
     }
@@ -72,6 +76,8 @@ function MatchUpdater() {
       time: "00:00",
       channel: "channel",
       status: "upcoming",
+      sub_channel: "sub_channel",
+      channel_2: "channel_2",
     });
 
     setLoading(false);
@@ -131,6 +137,16 @@ function MatchUpdater() {
                           type="text"
                           placeholder="channel"
                           onChange={(e) => setChannel(e.target.value)}
+                        />
+                        <input
+                          type="text"
+                          placeholder="sub_channel"
+                          onChange={(e) => setSub_channel(e.target.value)}
+                        />
+                        <input
+                          type="text"
+                          placeholder="channel_2"
+                          onChange={(e) => setChannel_2(e.target.value)}
                         />
                         <input
                           type="text"

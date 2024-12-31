@@ -16,38 +16,56 @@ function MatchCard({ fixture }) {
   const matchStatus = fixture.status;
   const matchChannel = fixture.channel;
   const matchTIme = fixture.time;
+  const subChannel = fixture?.sub_channel;
+  const channel2 = fixture?.channel_2;
 
   return (
-    <Link
-      to={
-        matchStatus == "started"
-          ? `/stream/${matchChannel}`
-          : `/fixture/not_started`
-      }
-    >
-      <div className="matchcard-container">
-        {/* team names and logos */}
-        <div className="teams">
-          {/* team one */}
-          <section>
-            <p>{teamsPlaying[0].name}</p>
-            <img src={teamsPlaying[0].logo} alt="logo" />
-          </section>
+    <div className="matchcard-container">
+      {/* team names and logos */}
+      <div className="teams">
+        {/* team one */}
+        <section>
+          <p>{teamsPlaying[0].name}</p>
+          <img src={teamsPlaying[0].logo} alt="logo" />
+        </section>
 
-          {/* team two */}
-          <section>
-            <p>{teamsPlaying[1].name}</p>
-            <img src={teamsPlaying[1].logo} alt="logo" />
-          </section>
-        </div>
-
-        {/* match status */}
-        <div>
-          <p>{matchStatus}</p>
-          {matchStatus == "upcoming" && <p>{matchTIme}</p>}
-        </div>
+        {/* team two */}
+        <section>
+          <p>{teamsPlaying[1].name}</p>
+          <img src={teamsPlaying[1].logo} alt="logo" />
+        </section>
       </div>
-    </Link>
+
+      {/* match status */}
+      <div>
+        <p>{matchStatus}</p>
+        {matchStatus == "upcoming" && <p>{matchTIme}</p>}
+      </div>
+
+      {/* server buttons */}
+      <div className="server_buttons">
+        {/* link 1 button */}
+        <Link
+          to={
+            matchStatus == "started"
+              ? `/stream_2/${subChannel}/${channel2}`
+              : `/fixture/not_started`
+          }
+        >
+          <button>Server 1</button>
+        </Link>
+        {/* link 2 button */}
+        {/* <Link
+          to={
+            matchStatus == "started"
+              ? `/stream/${matchChannel}`
+              : `/fixture/not_started`
+          }
+        >
+          <button>Server 2</button>
+        </Link> */}
+      </div>
+    </div>
   );
 }
 
