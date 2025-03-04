@@ -1,0 +1,7 @@
+.channel_btns {
+  @apply flex w-full justify-center gap-4 mt-5;
+}
+
+.channel_btns button {
+  @apply bg-gray-900 text-white p-2 rounded-md;
+}
