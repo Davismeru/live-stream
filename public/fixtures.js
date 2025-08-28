@@ -46,12 +46,12 @@ export const epl_teams = [
     index: 8,
   },
   {
-    name: "Ipswich Town",
+    name: "Burnley",
     logo: "/logos/ipswich.png",
     index: 9,
   },
   {
-    name: "Leicester City",
+    name: "Leeds United",
     logo: "/logos/leicester.png",
     index: 10,
   },
@@ -81,7 +81,7 @@ export const epl_teams = [
     index: 15,
   },
   {
-    name: "Southampton",
+    name: "Sunderland",
     logo: "/logos/southampton.png",
     index: 16,
   },
