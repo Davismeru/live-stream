@@ -39,7 +39,7 @@ function App() {
           <Route path="/register_admin" Component={AdminRegister} />
           <Route path="/admin_signin" Component={AdminSignin} />
           <Route path="/admin/add_blog" Component={AddBlog} />
-          <Route path="/index" Component={TeamIndexes} />
+          <Route path="/team_index" Component={TeamIndexes} />
         </Routes>
         <Footer />
       </Router>
